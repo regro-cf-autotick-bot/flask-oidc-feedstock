@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   entry_points:
     - oidc-register=flask_oidc.registration_util:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
@@ -50,6 +50,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - adbeda
     - agcopenhaver
     - rluria14
