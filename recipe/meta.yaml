@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   entry_points:
     - oidc-register=flask_oidc.registration_util:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
@@ -20,12 +20,12 @@ requirements:
   host:
     - flask
     - pip
-    - python
+    - python >=3.6
   run:
     - flask
     - itsdangerous
     - oauth2client
-    - python
+    - python >=3.6
     - six
 
 test:
@@ -51,7 +51,3 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - adbeda
-    - agcopenhaver
-    - rluria14
-    - oblute
