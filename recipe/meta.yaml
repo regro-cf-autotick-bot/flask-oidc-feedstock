@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   entry_points:
     - oidc-register=flask_oidc.registration_util:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
@@ -20,15 +20,17 @@ requirements:
   host:
     - flask
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - flask
     - itsdangerous
     - oauth2client
-    - python >=3.6
+    - python >={{ python_min }}
     - six
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - flask_oidc
   commands:
